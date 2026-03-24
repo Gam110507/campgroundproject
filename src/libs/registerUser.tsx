@@ -1,10 +1,12 @@
+import { getApiUrl } from "./api"
+
 export default async function registerUser(
   name: string,
   email: string,
   password: string,
   telephone: string
 ) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/auth/register`, {
+  const res = await fetch(`${getApiUrl()}/api/v1/auth/register`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"

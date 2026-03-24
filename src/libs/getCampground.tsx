@@ -1,5 +1,7 @@
+import { getApiUrl } from "./api";
+
 export default async function getCampground(id:string) {
-    const response = await fetch(`http://campgroundbackend.us-east-1.elasticbeanstalk.com/api/v1/campgrounds/${id}`)
+    const response = await fetch(`${getApiUrl()}/api/v1/campgrounds/${id}`)
     if(!response.ok) {
         throw new Error("Failed to fetch campground") ;
     }

@@ -1,6 +1,7 @@
+import { getApiUrl } from "./api"
 export default async function createBooking(id: string, data: any, token: string) {
     const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/campgrounds/${id}/bookings`,
+        `${getApiUrl()}/api/v1/campgrounds/${id}/bookings`,
         {
             method: "POST", 
             headers: {

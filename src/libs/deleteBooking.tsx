@@ -3,6 +3,7 @@
 import { getServerSession } from "next-auth"
 import { authOptions } from "@/app/api/auth/[...nextauth]/authOption"
 import { revalidatePath } from "next/cache"
+import { getApiUrl } from "./api"
 
 export async function deleteBooking(formData: FormData) {
     const session = await getServerSession(authOptions)
@@ -18,7 +19,7 @@ export async function deleteBooking(formData: FormData) {
     if (!id) return;
 
     try {
-        const response = await fetch(`http://campgroundbackend.us-east-1.elasticbeanstalk.com/api/v1/bookings/${id}`, {
+        const response = await fetch(`${getApiUrl()}/api/v1/bookings/${id}`, {
             method: "DELETE",
             headers: {
                 "Authorization": `Bearer ${token}`
