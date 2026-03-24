@@ -1,5 +1,5 @@
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/app/api/auth/[...nextauth]/authOption";
 import getUserProfile from "@/libs/getUserProfile";
 import { dbConnect } from "@/db/dbConnect";
 import { revalidateTag } from "next/cache";
