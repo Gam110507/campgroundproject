@@ -4,7 +4,7 @@ export default async function registerUser(
   password: string,
   telephone: string
 ) {
-  const res = await fetch("http://campgroundbackend.us-east-1.elasticbeanstalk.com/api/v1/auth/register", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/auth/register`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"

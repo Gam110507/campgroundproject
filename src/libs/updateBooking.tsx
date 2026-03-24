@@ -1,5 +1,5 @@
 export default async function updateBooking(id: string, data: any, token: string) {
-    const res = await fetch(`http://campgroundbackend.us-east-1.elasticbeanstalk.com/api/v1/bookings/${id}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/bookings/${id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',

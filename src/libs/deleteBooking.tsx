@@ -18,7 +18,7 @@ export async function deleteBooking(formData: FormData) {
     if (!id) return;
 
     try {
-        const response = await fetch(`http://campgroundbackend.us-east-1.elasticbeanstalk.com/api/v1/bookings/${id}`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/bookings/${id}`, {
             method: "DELETE",
             headers: {
                 "Authorization": `Bearer ${token}`

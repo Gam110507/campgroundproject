@@ -18,7 +18,15 @@ const nextConfig: NextConfig = {
                 ]
             }
         ]
-    }
+    },
+    async rewrites() {
+    return [
+      {
+        source: '/backend/:path*',
+        destination: 'http://campgroundbackend.us-east-1.elasticbeanstalk.com/:path*',
+      },
+    ];
+  },
 
   
 };
